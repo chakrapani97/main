@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/display.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            {% if student %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ student.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Roll No</th>
+                            <td>{{ student.rollno }}</td>
+                        </tr>
+                        <tr>
+                            <th>English</th>
+                            <td>{{ student.english }}</td>
+                        </tr>
+                        <tr>
+                            <th>Sanskrit</th>
+                            <td>{{ student.sanskrit }}</td>
+                        </tr>
+                        <tr>
+                            <th>Maths1A</th>
+                            <td>{{ student.maths1a }}</td>
+                        </tr>
+                        <tr>
+                            <th>Maths1B</th>
+                            <td>{{ student.maths1b }}</td>
+                        </tr>
+                        <tr>
+                            <th>Physics</th>
+                            <td>{{ student.physics }}</td>
+                        </tr>
+                        <tr>
+                            <th>Chemistry</th>
+                            <td>{{ student.chemistry }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total Marks</th>
+                            <td>{{ student_total_marks }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="{% url 'search' %}" class="btn btn-primary">Search Another Student</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

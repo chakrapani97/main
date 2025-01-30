@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Data</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/display.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Add Data</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_rollno">Roll No:</label><br>
+                    {{ form.rollno }}
+                    {% if form.errors.rollno %}
+                        <p class="text-danger">{{ form.errors.rollno }}</p>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="id_name">Name:</label><br>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="id_english">English:</label><br>
+                    {{ form.english }}
+                </div>
+                <div class="form-group">
+                    <label for="id_sanskrit">Sanskrit:</label><br>
+                    {{ form.sanskrit }}
+                </div>
+                <div class="form-group">
+                    <label for="id_maths1a">Maths1A:</label><br>
+                    {{ form.maths1a }}
+                </div>
+                <div class="form-group">
+                    <label for="id_maths1b">Maths1B:</label><br>
+                    {{ form.maths1b }}
+                </div>
+                <div class="form-group">
+                    <label for="id_physics">Physics:</label><br>
+                    {{ form.physics }}
+                </div>
+                <div class="form-group">
+                    <label for="id_chemistry">Chemistry:</label><br>
+                    {{ form.chemistry }}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
